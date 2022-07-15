@@ -1,0 +1,42 @@
+//===================================
+// Categories
+//===================================
+
+.categories {
+
+	background-color: $link-color;
+	color: $gray-0;
+	display:inline-block;
+	font-size: 12px;
+	font-size: rem(12px);
+	font-weight: 700;
+	line-height: normal;
+	margin: 0 0 30px 15px;
+	padding: 7px 30px;
+	position: relative;
+	text-decoration:none;
+	text-transform: uppercase;
+
+	&:before {
+		content:"";
+		float:left;
+		position:absolute;
+		top:0;
+		left:-25px;
+		width: 25px;
+		height: 10px;
+		background-color: $link-color;
+	}
+
+	@include media($lbp) {
+		margin: -20px 0 30px 15px;
+	}
+}
+
+.categories--box {
+	margin: 20px 30px 0 25px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}

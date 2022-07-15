@@ -1,0 +1,72 @@
+//===================================
+// Slider
+//===================================
+
+.slider {
+	height: 100%;
+	width: 100%;
+}
+
+.section__wrapper.hide--mbp,
+.section__wrapper.hide--lbp {
+	.btn {
+		background-color: $bg-color-light;
+		color: $gray-0;
+		margin: 5px 10px;
+		min-width: 182px;
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+}
+
+.slider__item {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale');
+  	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+  	@include prefix(background-size, cover, webkit moz o ms);
+
+  	background-color: $gray-15;
+	background-repeat: no-repeat;
+  	background-position: center top;
+	height: 100%;
+	width: 100%;
+
+	&:before {
+		@extend %gradient-bg;
+		@extend %gradient-bg--light;
+	}
+
+	&.animate, &.slick-cloned {
+		opacity: 1 !important;
+	}
+
+  .js-slick & {
+    opacity: 0;
+	}
+	.btn {
+		background-color: $bg-color-light;
+		color: $gray-0;
+		margin: 10px;
+		&::before,
+		&::after {
+			display: none;
+		}
+
+		&:focus {
+			background: $yellow;
+			color: $gray-0;
+		}
+	
+		@include media($mbp){
+			&:hover {
+				background: $yellow;
+				color: $gray-0;
+			}
+		}
+	}
+}
+
+
+	
+

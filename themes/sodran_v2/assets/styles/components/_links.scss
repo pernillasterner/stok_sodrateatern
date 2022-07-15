@@ -1,0 +1,57 @@
+.link--tel {
+  @extend .icon;
+  @extend .icon--phone;
+
+  display: block;
+  color: $gray-0;
+  margin: 10px 0 30px 0;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  &:before {
+    margin-right: 5px;
+  }
+
+  &:visited {
+		color: $gray-0;
+	}
+	&:focus {
+    color: $gray-0;
+    opacity: .6;
+	}
+
+	@include media($mbp){
+		&:hover {
+      color: $gray-0;
+			opacity: .6;
+			text-decoration: none;
+		}
+	}
+}
+
+//SHARE
+.link--social {
+	display: inline-block;
+	margin: 0 6px 0 0;
+  text-decoration: none;
+
+	&:focus {
+		opacity: .6;
+	}
+
+	@include media($mbp) {
+		margin: 0 16px 0 0;
+		&:hover {
+			opacity: .6;
+		}
+	}
+
+	&.icon:before {
+			vertical-align: middle;
+	}
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}

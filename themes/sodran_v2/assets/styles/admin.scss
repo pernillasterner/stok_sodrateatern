@@ -1,0 +1,47 @@
+.mce-content-body {
+
+	.title {
+		font-size: 28px;
+		font-weight: 700;
+		line-height: 1.2;
+		margin: 0 0 10px 0;
+		text-transform: uppercase;
+	  text-decoration: none;
+		white-space: normal;
+		word-wrap: break-word;
+
+		&--biggest {
+			font-size: 70px;
+		}
+
+		&--big {
+			font-size: 40px;
+		}
+
+		&--medium {
+			font-size: 20px;
+		}
+
+		&--small {
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		&--smallest {
+			font-size: 12px;
+			font-weight: 700;
+		}
+
+	}
+
+	.preamble {
+		font-size: 24px;
+		font-style: italic;
+		font-weight: 300;
+		margin-top: 0;
+
+		&--big {
+			font-size: 30px;
+		}
+	}
+}

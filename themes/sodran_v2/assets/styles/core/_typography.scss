@@ -1,0 +1,254 @@
+//===================================
+// Typography
+//===================================
+
+
+// Brandon
+//-------------------------
+%brandon {
+	font-family: 'brandon-grotesque', 'Brandon Grotesque', Arial, Helvetica, sans-serif;
+}
+
+%helvetica {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+// BASE TYPOGRAPHY
+//-------------------------
+html,
+button,
+input,
+select,
+textarea {
+    color: $gray-0;
+}
+
+html {
+	@extend %helvetica;
+  @include prefix(font-smoothing, antialiased, webkit);
+
+  font-size: 16px;
+	font-size: rem(16px);
+	font-weight: 300;
+  line-height: 1.3;
+  text-rendering: optimizeLegibility;
+}
+
+p {
+	margin: 5px 0 30px 0;
+  white-space: normal;
+
+	@include media($sbp){
+		font-size: 20px;
+		font-size: rem(20px);
+	}
+}
+
+a {
+	color: $gray-0;
+	font-weight: 700;
+	text-decoration: none;
+
+	&:visited {
+		color: $gray-0;
+	}
+	&:focus {
+		color: $gray-0;
+	}
+
+	@include media($mbp){
+		&:hover {
+			color: $gray-0;
+			text-decoration: underline;
+		}
+	}
+}
+
+hr {
+	border-color: $gray-0;
+}
+
+// HEADINGS
+//-------------------------
+
+.title {
+	font-size: 28px;
+	font-size: rem(28px);
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0 0 10px 0;
+  text-decoration: none;
+	white-space: normal;
+	word-wrap: break-word;
+
+	&--biggest {
+		font-size: 40px;
+		font-size: rem(40px);
+		margin-top: 30px;
+
+		@include media($sbp) {
+			font-size: 60px;
+			font-size: rem(60px);
+		}
+		@include media($mbp) {
+			font-size: 70px;
+			font-size: rem(70px);
+		}
+	}
+
+	&--big {
+		font-size: 32px;
+		font-size: rem(32px);
+
+		@include media($sbp) {
+			font-size: 36px;
+			font-size: rem(36px);
+		}
+		@include media($mbp) {
+			font-size: 40px;
+			font-size: rem(40px);
+		}
+	}
+
+	&--medium {
+		font-size: 16px;
+		font-size: rem(16px);
+
+		@include media($sbp) {
+			font-size: 18px;
+			font-size: rem(18px);
+		}
+		@include media($mbp) {
+			font-size: 20px;
+			font-size: rem(20px);
+		}
+	}
+
+	&--small {
+		font-size: 16px;
+		font-size: rem(16px);
+		font-weight: 700;
+
+    @include media($sbp) {
+			font-size: 16px;
+			font-size: rem(16px);
+		}
+		@include media($mbp) {
+			font-size: 16px;
+			font-size: rem(16px);
+		}
+	}
+
+	&--smallest {
+		font-size: 12px;
+		font-size: rem(12px);
+		font-weight: 700;
+
+    @include media($sbp) {
+			font-size: 12px;
+			font-size: rem(12px);
+		}
+		@include media($mbp) {
+			font-size: 12px;
+			font-size: rem(12px);
+		}
+	}
+
+  &--list-view {
+    font-size: 20px;
+    font-size: rem(20px);
+    line-height: 1;
+    margin-bottom: 5px;
+
+    @include media($sbp) {
+      font-size: 24px;
+    	font-size: rem(24px);
+    }
+
+    @include media($mbp) {
+      font-size: 28px;
+    	font-size: rem(28px);
+    }
+  }
+}
+
+// CONTENT
+//-------------------------
+
+.preamble {
+	font-size: 20px;
+	font-size: rem(20px);
+	font-style: italic;
+	font-weight: 300;
+	margin-top: 0;
+	&:empty {
+		display: none;
+	}
+
+	@include media($sbp) {
+		font-size: 24px;
+		font-size: rem(24px);
+	}
+
+	&--big {
+		font-size: 24px;
+		font-size: rem(24px);
+
+		@include media($sbp) {
+			font-size: 30px;
+			font-size: rem(30px);
+		}
+	}
+
+  &--small {
+		font-size: 16px;
+		font-size: rem(16px);
+
+		@include media($sbp) {
+			font-size: 20px;
+			font-size: rem(20px);
+		}
+	}
+}
+
+.fineprint {
+	color: $gray-0;
+	font-size: 14px;
+	font-size: rem(14px);
+	font-weight: 400;
+	margin-top: 0;
+}
+
+// HELPERS
+//-------------------------
+
+.txt-l {
+	text-align: left;
+}
+
+.txt-c {
+	text-align: center;
+}
+
+.txt-r {
+	text-align: right;
+}
+
+.txt-j {
+	text-align: justify;
+}
+
+.txt-subtle {
+	color: #999;
+}
+
+.txt-uc {
+    text-transform: uppercase;
+}
+
+.info-txt {
+  color: $gray-0;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}

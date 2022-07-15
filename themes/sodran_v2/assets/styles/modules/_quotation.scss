@@ -1,0 +1,147 @@
+.quotation {
+	//@extend %vertical-middle;
+	background: $bg-color-light;
+	display: block;
+	width: 100%;
+	max-width: 550px;
+	margin: 60px auto 0px auto;
+
+	p {
+		margin-top: 30px;
+
+		&.less-margin-next-el + p,
+		&.strong + p {
+			margin-top: 10px;
+		}
+	}
+
+  input[type="submit"] {
+		margin-top: 30px;
+		outline: none;
+		outline: 0;
+		height: initial;
+		padding: 15px 40px;
+		&:after {
+			display: none;
+		}
+	}
+
+	div.wpcf7-response-output {
+		color: $gray-0;
+	}
+
+	span.wpcf7-not-valid-tip {
+		color: $primary-color;
+    font-size: 16px;
+    font-size: rem(16px);
+    margin-top:1px;
+	}
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="date"],
+	textarea,
+  select {
+  	border-bottom: 1px solid $gray-15;
+    border-radius: 0px;
+    box-shadow: none;
+  	color: $gray-0;
+    font-weight: 300;
+  	height: auto;
+  	line-height: 2;
+    position: relative;
+  	width: 100%;
+  	text-indent: 1px;
+  	text-overflow: '';
+
+    &::-ms-expand {
+  		display: none;
+  	}
+
+  	&.wpcf7-not-valid {
+  		border-bottom: 1px solid $primary-color;
+  	}
+
+  	&:-webkit-autofill {
+  			-webkit-box-shadow: 0 0 0px 1000px white inset;
+  	}
+  }
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="date"],
+	select {
+		padding: 0;
+	}
+
+	textarea {
+		border: 1px solid $gray-15;
+    line-height: 1.2;
+    padding: 10px;
+	}
+
+	span.wpcf7-list-item {
+		margin-left: 0;
+	}
+
+}
+
+.quotation__wrapper {
+	padding: 30px 20px;
+
+  @include media($sbp){
+    padding: 30px;
+  }
+}
+
+
+.your-event {
+	&:before {
+    @extend .icon:before;
+    @extend .icon--pointer-d--inv:before;
+
+		content: '';
+		display: block;
+		height: 10px;
+		width: 20px;
+		position: absolute;
+		right:  10px;
+		top: 15px;
+		z-index: 0;
+
+    .ie & {
+      display: none;
+    }
+	}
+
+	select {
+  	text-indent: 0.01px;
+  	text-overflow: '';
+
+  	.ie & {
+  		color: $gray-0;
+  		background-color: $gray-100;
+  	}
+
+  	option {
+  		background-color: $gray-100;
+  		color: $gray-0;
+
+      &:disabled {
+        color: $gray-15;
+      }
+  	}
+	}
+}
+
+.your-date:before {
+	display:none;
+}

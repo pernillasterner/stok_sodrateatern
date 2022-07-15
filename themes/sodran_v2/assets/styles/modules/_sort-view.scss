@@ -1,0 +1,306 @@
+@include media-max($mbp-max){
+	#sv-controls {
+		display: none;
+	}
+}
+
+@keyframes show-sort-view {
+  0%   { top: -110px; }
+	50%  { top: -110px; }
+  100% { top: 0px; }
+}
+
+.evenemang-list-view {
+	.hero,
+	.scroll-to {
+			display: none;
+	}
+}
+
+.category-evenemang-taxonomy-type {
+	&:not(.evenemang-list-view) {
+		.section {
+			padding-top: 70px;
+
+			&.hero,
+			&.hero ~ .section {
+				padding-top: 0;
+			}
+		}
+	}
+}
+
+.sort-view {
+	background: $search-bg;
+	color: $gray-100;
+	padding: 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+
+  @include media($sbp) {
+    left: $menu-bar-width;
+		width: calc(100% - #{$menu-bar-width});
+  }
+	@include media($mbp) {
+		animation: show-sort-view 1.8s ease-out 1;
+    // background: transparent;
+		// background: url(../images/gradient-small3.png) repeat-x top;
+		background: $search-bg;
+
+		padding: 10px 90px 10px 30px;
+		height: 75px;
+		top: 0;
+		left: $menu-bar-width + px;
+		bottom: auto;
+		width: calc(100% - #{$menu-bar-width});
+	}
+	@media screen and (min-width: 1080px) {
+		padding: 10px 140px 10px 30px;
+	}
+
+}
+
+.sort-view--mobile {
+  width: 100%;
+
+  @include media($sbp) {
+    float: right;
+		width: calc(100% - #{$menu-bar-width});
+  }
+}
+
+.sort-view__wrapper {
+	width: 100%;
+}
+
+
+.sort-view__btn {
+	background: $primary-color;
+	border: none;
+	color: $gray-100;
+	outline: none;
+	padding: 15px 20px;
+	text-transform: uppercase;
+	width: 100%;
+
+	&[aria-expanded="true"] {
+		.closed {
+			display: none;
+		}
+	}
+
+	&[aria-expanded="false"] {
+		.open {
+			display: none;
+		}
+	}
+
+	&:focus {
+  	background: darken( $primary-color, 10% );
+  }
+
+  @include media($mbp){
+  	&:hover {
+  		background: darken( $primary-color, 10% );
+  	}
+  }
+}
+
+//sort
+.sort {
+	padding: 10px 30px;
+
+	@include media($mbp){
+		padding: 0;
+	}
+}
+.sort__title {
+	vertical-align: middle;
+	margin: 0 20px 0 10px;
+	text-transform: uppercase;
+	color: $gray-0;
+}
+
+.sort__item {
+	@include border-radius( 0 );
+	background-color: $primary-color;
+	display: block;
+	margin: 20px 0;
+	padding: 0;
+	position: relative;
+	width: 100%;
+
+	@include media($mbp){
+		display: inline-block;
+		margin: 0 0 0 20px;
+		width: 180px;
+
+		&:first-of-type {
+			margin-left: 0;
+		}
+	}
+
+	@include media($lbp) {
+		width: 200px;
+		margin: 0 0 0 30px;
+	}
+
+	@include media($xlbp) {
+		width: 230px;
+		margin: 0 0 0 40px;
+	}
+
+}
+
+.sort__date {
+	.sort__input:focus + .sort__input-icon:before {
+		border-top-color: $yellow;
+	}
+}
+
+.sort__input {
+	@include placeholder-color($gray-100);
+
+	background: none;
+	border: none;
+	color: $gray-100;
+	font-weight: 700;
+	height: 48px;
+	line-height: 48px;
+	outline: none;
+	padding: 0 50px 0 20px;
+	vertical-align: middle;
+	width: 100%;
+	position: relative;
+	z-index: 3;
+
+	&:focus {
+    	opacity: .8;
+  }
+
+	@include media($mbp) {
+    padding: 0 50px 0 20px;
+
+		&:hover {
+    	opacity: .8;
+   }
+	}
+
+}
+
+.sort__input-icon {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: $search-bg;
+	height: 34px;
+	width: 40px;
+	text-align: center;
+	&:before {
+		background-image: none;
+		width: 0; 
+		height: 0; 
+		border-left: 12px solid transparent;
+		border-right: 12px solid transparent;
+		border-top: 20px solid $primary-color;
+		margin-top: 7px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.sort__select {
+	-webkit-appearance: none;
+	appearance: none;
+	background: none;
+	border: none;
+	color: $gray-100;
+	font-weight: 500;
+	height: 40px;
+	outline: none;
+	padding: 0 40px 0 20px;
+	vertical-align: middle;
+	width: 100%;
+	option {
+		color: $gray-0;
+	}
+}
+
+
+
+//view
+.view {
+	padding: 0 30px 30px 30px;
+	text-align: center;
+
+	@include media($mbp){
+    padding: 0 30px;
+		text-align: right;
+	}
+}
+
+.view__link {
+	background: transparent;
+	border: none;
+  display: inline-block;
+	color: $gray-0;
+	font-weight: 700;
+	padding-left: 35px;
+	margin-left: 25px;
+	position: relative;
+	text-decoration: none;
+
+	&:first-child {
+		margin-left: 0;
+	}
+
+	&:before {
+		margin-top: -10px;
+		position: absolute;
+		top: 50%;
+		left: 0;
+	}
+
+	&:focus, &.is-active {
+		outline: 0;
+		&:after {
+			background: $gray-0;
+			content: '';
+			display: block;
+			height: 2px;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: calc(100% - 35px);
+		}
+	}
+
+	&:focus {
+		opacity: .8;
+	}
+
+	@include media($mbp){
+
+		&:first-child {
+			margin-left: 10px;
+		}
+
+		&:hover {
+			opacity: .8;
+
+			&:after {
+				background: $gray-0;
+				content: '';
+				display: block;
+				height: 2px;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				width: calc(100% - 35px);
+			}
+		}
+	}
+}

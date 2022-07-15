@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="20px" viewBox="0 0 12 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>chevron-left</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dripicons-v2-by-amit-jakhu" transform="translate(-2902.000000, -2730.000000)" fill="#FFFFFF">
+            <path d="M2913.30073,2747.62654 C2913.8497,2748.15448 2913.86694,2749.02758 2913.33901,2749.57689 C2913.06832,2749.85828 2912.70659,2750 2912.34452,2750 C2912.00038,2750 2911.65625,2749.87241 2911.38866,2749.61517 L2902.42311,2740.99445 C2902.15276,2740.73445 2902,2740.37513 2902,2739.99996 C2902,2739.62513 2902.15276,2739.26582 2902.42311,2739.00582 L2911.38866,2730.38509 C2911.93763,2729.85716 2912.81108,2729.87406 2913.33901,2730.42337 C2913.86694,2730.97268 2913.8497,2731.84579 2913.30073,2732.37372 L2905.36932,2739.99996 L2913.30073,2747.62654 Z" id="chevron-left"></path>
+        </g>
+    </g>
+</svg>

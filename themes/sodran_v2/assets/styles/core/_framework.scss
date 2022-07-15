@@ -1,0 +1,208 @@
+//===================================
+// Framework
+//===================================
+
+* {
+	@include box-sizing(border)
+}
+
+@-ms-viewport{width:device-width;}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow:hidden;
+  position: relative;
+}
+
+html, body {
+    background: $bg-color;
+    min-height: 100%;
+    height: 100%;
+	  margin: 0;
+    padding: 0;
+	  width: 100%;
+	  -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+body {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @include media($sbp) {
+    &.overlay {
+
+      &:after {
+        @include transition(background, .2s, ease-out);
+        background: rgba(0, 0, 0, 0);
+        content: '';
+        height: 100%;
+        width: 100%;
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+      }
+
+      &.animate {
+        &:after {
+          background: rgba(0, 0, 0, .5);
+        }
+      }
+    }
+	}
+}
+
+#container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  @include media($sbp) {
+    float: right;
+		width: calc(100% - #{$menu-bar-width});
+	}
+}
+
+.container--black {
+  // background-color: $gray-0;
+  background-color: $bg-color;
+}
+
+.container--white {
+  // background-color: $gray-100;
+  background-color: $bg-color;
+}
+
+.section {
+	@include cf();
+  overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+
+.section--grid {
+	@include cf();
+	max-width: 1170px;
+	width: 100%;
+	padding: 40px 0 0 0;
+	margin: 0 auto;
+	color: $gray-0;
+}
+
+.section--padding {
+  padding: 40px 20px;
+
+  .section--grid:first-of-type {
+    padding-top: 0;
+  }
+}
+
+.section-min-100 {
+  min-height: 100%;
+  background-color: $bg-color;
+}
+
+
+.section--min-height {
+
+  @include media($mbp) {
+    min-height: calc(100% - 800px);
+  }
+  @include media($lbp) {
+    min-height: calc(100% - 400px);
+  }
+}
+
+.section__wrapper {
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.loading-bar {
+    display: block;
+    height: 188px;
+    line-height: 128px;
+    clear: both;
+    padding: 30px 0px;
+}
+
+.date-break {
+    @include stack();
+    color: $gray-100;
+    text-align: center;
+    padding: 30px;
+    text-transform: uppercase;
+}
+
+.no-content {
+  color: $gray-100;
+  padding: 120px 30px 100px 30px;
+
+  width: 100%;
+
+  @include media($mbp) {
+    padding: 150px 30px 100px 30px;
+  }
+  @include media($lbp) {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    padding: 50px;
+  }
+}
+
+.js-masonry {
+	display: block;
+	opacity: 0;
+	transition: opacity .3s ease-out;
+}
+
+//SMALL BP SPAN
+@for $i from 1 through $col {
+    .span-#{$i}-#{$col} {
+        &--sbp {
+            @include media($sbp){
+                @include span($i/$col);
+            }
+        }
+    }
+}
+
+
+
+//MEDIUM BP SPAN
+@for $i from 1 through $col {
+    .span-#{$i}-#{$col} {
+        &--mbp {
+            @include media($mbp){
+                @include span($i/$col);
+            }
+        }
+    }
+}
+
+//LARGE BP SPAN
+@for $i from 1 through $col {
+    .span-#{$i}-#{$col} {
+        &--lbp {
+            @include media($lbp){
+                @include span($i/$col);
+            }
+        }
+    }
+}
+

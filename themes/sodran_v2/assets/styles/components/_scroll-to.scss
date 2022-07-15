@@ -1,0 +1,97 @@
+//===================================
+// Scroll to bar
+//===================================
+
+.scroll-to {
+	background: $bg-color;
+
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.scroll-to__btn {
+	-webkit-appearance: none;
+	appearance: none;
+	background: transparent;
+	border: none;
+	display: block;
+	width: 100%;
+	text-decoration: none;
+
+
+	&:before {
+		@include transition(all, .3s, ease-in-out);
+		@include rotate-and-center(135deg);
+		border-right: 0.2em solid $gray-0;
+    	border-top: 0.2em solid $gray-0;
+		content: '';
+		display: block;
+		height: 20px;
+		opacity: 0;
+		position: absolute;
+		top: 110%;
+		left: 50%;
+		width: 20px;
+	}
+
+	&:focus {
+		outline: 0;
+		.scroll-to__txt {
+			transform: translateY(-300%);
+			opacity: 0;
+		}
+		&:before {
+			top: 45%;
+			opacity: 1;
+		}
+	}
+
+	@include media($mbp){
+		&:hover {
+			.scroll-to__txt {
+				transform: translateY(-300%);
+				opacity: 0;
+			}
+			&:before {
+				top: 45%;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.scroll-to__txt {
+	@include transition(all, .5s, ease-in-out);
+
+	color: $gray-0;
+	font-size: 12px;
+	font-size: rem(12px);
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 1;
+	position: relative;
+	display: block;
+	padding: 26px 15px;
+
+	@include media($sbp){
+		padding: 20px;
+	}
+	@include media($mbp){
+		padding: 25px;
+	}
+
+	@include media($sbp){
+		font-size: 14px;
+		font-size: rem(14px);
+	}
+
+}
+
+.hero {
+	.scroll-to {
+		position: absolute;
+		bottom: 0;
+	}
+}

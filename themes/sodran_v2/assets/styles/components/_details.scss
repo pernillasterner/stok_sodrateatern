@@ -1,0 +1,53 @@
+//===================================
+// Evenemang details
+//===================================
+
+.details {
+	table-layout: fixed;
+	width: 100%;
+}
+
+.details__info {
+	font-size: 14px;
+	font-size: rem(14px);
+	font-weight: 300;
+	padding: 0 10px 0 25px;
+	position: relative;
+  white-space: normal;
+}
+
+.details--link {
+	color: $gray-100 !important;
+	text-decoration: none;
+
+	@include media($mbp) {
+		&:hover {
+			opacity: .6;
+		}
+	}
+
+  .details__info {
+    padding-left: 10px;
+    padding-right: 5px;
+    &:first-of-type {
+      padding-right: 0;
+      padding-left: 25px;
+    }
+  }
+
+  .details__info--status {
+  	padding: 0;
+  	width: 13px;
+  }
+}
+
+.details--old {
+	opacity: .3;
+	text-decoration: line-through;
+
+	@include media($mbp){
+		&:hover {
+			opacity: .3;
+		}
+	}
+}

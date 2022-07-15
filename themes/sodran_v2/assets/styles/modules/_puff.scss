@@ -1,0 +1,88 @@
+//===================================
+// Puff
+//===================================
+
+.puff {
+	background: $gray-100;
+	border-bottom: 1px solid $gray-15;
+	height: auto;
+
+	@include media($sbp){
+		height: 400px;
+	}
+}
+
+.puff__wrapper {
+	height: auto;
+	overflow: auto;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	padding: 30px;
+	position: relative;
+	text-align: center;
+
+	@include media($sbp){
+		height: 100%;
+		padding: 45px 40px 20px 40px;
+	}
+}
+
+.puff__wrapper--img {
+	background-size: cover;
+	background-position: center top;
+	height: 200px;
+	overflow: hidden;
+	padding: 0;
+
+	&:after {
+		border: 30px solid transparent;
+		border-color: rgba(255, 255, 255, 0);
+		border-top-color: #ffffff;
+		border-width: 30px;
+		content: '';
+		height: 0;
+		margin-top: 0;
+		margin-left: -30px;
+		position: absolute;
+		left: 50%;
+		top: 0;
+		width: 0;
+	}
+
+	@include media($sbp) {
+		height: 100%;
+
+		&:after {
+			border-color: rgba(255, 255, 255, 0);
+			border-left-color: #ffffff;
+
+			margin-top: -30px;
+			margin-left: 0;
+			left: 0;
+			top: 50%;
+		}
+	}
+}
+
+.puff-preview {
+  color: $gray-100;
+  text-align: center;
+
+    .puff-single-preview {
+       @include cf();
+       margin: 0 auto;
+       padding: 30px 0;
+       width: 400px;
+    }
+    .puff-single-preview--wrapper {
+        @include stack();
+        color: $gray-100;
+    }
+
+    .puff-page-preview {
+      color: $gray-0;
+      padding: 30px 0;
+      @include media($lbp) {
+        @include shift(3/12)
+      }
+    }
+}

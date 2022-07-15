@@ -1,0 +1,112 @@
+//===================================
+// Header
+//===================================
+
+.list-view {
+  background-color: $bg-color-light;
+  color: $gray-0;
+  padding: 30px;
+  position: relative;
+
+
+  &:first-of-type {
+    padding-top: 100px;
+  }
+
+  
+  &:nth-of-type(odd){
+    background-color: $bg-color;
+    .list-view__parent-title {
+      color: $gray-0;
+    }
+  }
+
+  &.is-light {
+    background-color: $search-bg;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+
+  .list-view__content a {
+    color: $gray-0;
+    text-decoration: none;
+  }
+}
+
+.list-view__wrapper {
+  table-layout: fixed;
+  margin: auto;
+  width: 100%;
+  max-width: 1345px;
+
+  .btn {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+.list-view__img {
+  position: relative;
+  height: 100%;
+  width: 110px;
+  vertical-align: middle;
+}
+
+.list-view__img__wrapper {
+  @include border-radius(50%);
+  height: 80px;
+  overflow: hidden;
+  width: 80px;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.list-view__btn {
+  padding-top: 20px;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+
+  @include media($sbp){
+    padding-top: 0;
+    text-align: right;
+    width: 220px;
+  }
+}
+
+.list-view__content {
+  vertical-align: top;
+}
+
+.list-view__parent-title {
+  color: $gray-0;
+  display: block;
+  font-size: 14px;
+  font-size: rem(14px);
+  font-weight: 300;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.list-view__dates {
+  font-size: 16px;
+  font-size: rem(16px);
+
+  span {
+    display: inline-block;
+    font-size: 14px;
+    font-size: rem(14px);
+    padding: 0 5px 0 0;
+  }
+
+  .old {
+    text-decoration: line-through;
+    opacity: .3;
+  }
+}

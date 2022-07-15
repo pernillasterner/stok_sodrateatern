@@ -1,0 +1,262 @@
+//===================================
+// Utilities
+//===================================
+
+.table {
+  display: table;
+  width: 100%;
+
+  &--sbp {
+    @include media($sbp){
+      display: table;
+    }
+  }
+
+  &--mbp {
+    @include media($mbp){
+      display: table;
+    }
+  }
+}
+
+.row {
+    display: table-row;
+}
+.cell {
+  display: table-cell;
+
+  &--sbp {
+    @include media($sbp) {
+      display: table-cell;
+    }
+  }
+
+  &--mbp {
+    @include media($mbp) {
+      display: table-cell;
+    }
+  }
+
+  &--bottom {
+    vertical-align: bottom;
+  }
+}
+
+.bg--lightest {
+  background: $bg-color;
+}
+
+.bg--dark {
+  background: $bg-color;
+}
+
+
+.bg--darkest {
+  background: $bg-color;
+
+}
+
+.bg--stripes {
+  background-color: $bg-color;
+  // background-image: url('../images/bg_stripes.png');
+  background-size: 30px 30px;
+  background-repeat: repeat;
+}
+
+.visually-hidden, .screen-reader-text {
+  position: absolute;
+  width: 1px; /* Setting this to 0 make it invisible for VoiceOver */
+  height: 1px; /* Setting this to 0 make it invisible for VoiceOver */
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+
+.no-margin {
+  margin: 0 !important;
+}
+//Scrollable
+.scrollable {
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+
+  &--sbp {
+    @include media($sbp) {
+      overflow: auto;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  &--mbp {
+    @include media($mbp) {
+      overflow: auto;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  &--lbp {
+    @include media($lbp) {
+      overflow: auto;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  &--sbp-max {
+    overflow: hidden;
+
+    @include media-max($sbp) {
+      overflow: auto;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  &--mbp-max {
+    overflow: hidden;
+
+    @include media-max($mbp) {
+      overflow: auto;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  &--lbp-max {
+    overflow: hidden;
+
+    @include media-max($lbp) {
+      overflow: auto;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}
+
+//height
+.half-height {
+  height: 50vh;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.half-height--sbp {
+  @include media($sbp) {
+    height: 50vh;
+  }
+}
+.full-height--sbp {
+  @include media($sbp) {
+    height: 100vh;
+  }
+}
+
+.half-height--mbp {
+  @include media($mbp) {
+    height: 50vh;
+  }
+}
+
+.full-height--mbp {
+  @include media($mbp) {
+    height: 100vh;
+  }
+}
+
+.half-height--lbp {
+  @include media($lbp) {
+    height: 50vh;
+  }
+}
+
+.full-height--lbp {
+  @include media($lbp) {
+    height: 100vh;
+  }
+}
+
+.ratio-height {
+  display: inline-block; 
+  height: 100vh;
+
+  @include media($mbp) {
+    height: 80vw !important;
+  }
+
+  @include media($lbp) {
+    height: 100vh !important;
+  }
+}
+
+.ratio-height--mbp {
+  @include media($mbp) {
+    height: 80vw !important;
+  }
+  @include media($lbp) {
+    height: 100vh !important;
+  }
+}
+
+//hide
+.hide {
+  display: none !important;
+
+  &--sbp{
+    @include media($sbp) {
+     display: none !important;
+    }
+  }
+
+  &--mbp {
+    @include media($mbp) {
+      display: none !important;
+    }
+  }
+
+  &--lbp {
+    @include media($lbp) {
+      display: none !important;
+    }
+  }
+
+  &--sbp-max{
+    @include media-max($sbp-max) {
+      display: none !important;
+    }
+  }
+
+  &--mbp-max{
+    @include media-max($mbp-max) {
+      display: none !important;
+    }
+  }
+
+  &--lbp-max {
+    @include media-max($lbp-max) {
+      display: none !important;
+    }
+  }
+
+  &--mbp-only {
+    @media screen and (min-width: #{$mbp}) and (max-width: #{$lbp-max}) {
+      display: none;
+    }
+  }
+}

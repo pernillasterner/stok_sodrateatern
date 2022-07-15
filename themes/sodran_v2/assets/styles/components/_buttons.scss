@@ -1,0 +1,277 @@
+//===================================
+// Buttons
+//===================================
+
+.btn {
+	@include border-radius ( $value: 0 );
+	background: transparent;
+	color: $gray-100;
+	display: inline-block;
+	font-size: 12px;
+	font-size: rem(12px);
+	font-weight: 700;
+	letter-spacing: 1px;
+	line-height: 1;
+  outline: none;
+	padding: 13px 38px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	vertical-align: middle;
+	&:visited {
+		color: $gray-100;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		right: -25px;
+		top: 0;
+		width: 25px;
+		height: 10px;
+		display: block;
+		background-color: $gray-0;
+	}
+	@include media($mbp){
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.btn--margin {
+	margin: 10px;
+}
+
+.btn--b-margin {
+	margin-bottom: 60px;
+}
+.btn--primary {
+	background: $primary-color;
+	border: none;
+	padding: 20px 40px;
+	margin-right: 45px;
+
+	&:after {
+		right: -45px;
+		top: 0;
+		width: 45px;
+		height: 15px;
+	}
+
+	&:focus {
+		background: $yellow;
+		color: $gray-0;
+		&:after {
+			background: $yellow;
+		}
+	}
+
+	@include media($mbp){
+		&:hover {
+			background: $yellow;
+			color: $gray-0;
+			&:after {
+				background: $yellow;
+			}
+		}
+	}
+}
+
+//link type: hover effects
+.btn--internal, .btn--external {
+	&:before {
+		@include transition(all, .3s, linear);
+		background-position: right center;
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		color: $gray-100;
+		content: '';
+		display: block;
+		font-size: 125%;
+		line-height: 3.5;
+		opacity: 0;
+		position: absolute;
+		right: 0;
+		top: 56%;
+	}
+
+	&:focus {
+		&:before {
+			right: -30px;
+			opacity: 1;
+		}
+	}
+
+	@include media($mbp){
+  	&:hover {
+
+  		&:before {
+			right: -30px;
+			opacity: 1;
+  		}
+
+  	}
+  }
+}
+
+.btn--internal { //arrow icon
+	&:before {
+		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMjMuMC4yLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGFnZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgd2lkdGg9IjU4LjMwMXB4IiBoZWlnaHQ9IjYzLjkwM3B4IiB2aWV3Qm94PSIwIDAgNTguMzAxIDYzLjkwMyIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTguMzAxIDYzLjkwMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGQ9Ik00Ljk1Myw2My4yNzFDMi4yMjksNjQuNzg4LDAsNjMuNDc4LDAsNjAuMzU5VjMuNTQzYzAtMy4xMTgsMi4yMjktNC40MjgsNC45NTMtMi45MTJsNTEuMzA1LDI4LjU2MgoJYzIuNzI0LDEuNTE3LDIuNzI0LDMuOTk5LDAsNS41MTVMNC45NTMsNjMuMjcxeiIvPgo8L3N2Zz4K);
+		height: 18px;
+		margin-top: -5px;
+		width: 20px;
+	}
+
+}
+
+.btn--external { //new window icon
+	&:before {
+		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGRlZnM+PC9kZWZzPiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4gICAgICAgIDxnIGlkPSJwb3B1cCIgZmlsbD0iIzAwMDAwMCI+ICAgICAgICAgICAgPHBhdGggZD0iTTE3LjUsMCBMNy40NzM3NSwwIEM2LjEsMCA1LDEuMSA1LDIuNDc1IEw1LDEyLjUgQzUsMTMuODc1IDYuMTI1LDE1IDcuNSwxNSBMMTcuNSwxNSBDMTguODc1LDE1IDIwLDEzLjg3NSAyMCwxMi41IEwyMCwyLjUgQzIwLDEuMTI1IDE4Ljg3NSwwIDE3LjUsMCBMMTcuNSwwIFogTTE3LjUsMTIuNSBMNy41LDEyLjUgTDcuNSwyLjUgTDE3LjUsMi41IEwxNy41LDEyLjUgTDE3LjUsMTIuNSBaIE0yLjUsMTAgTDAsMTAgTDAsMTcuNSBDMCwxOC44NzUgMS4xMjUsMjAgMi41LDIwIEwxMCwyMCBMMTAsMTcuNSBMMi41LDE3LjUgTDIuNSwxMCBMMi41LDEwIFoiIGlkPSJTaGFwZSI+PC9wYXRoPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+);
+		height: 16px;
+    	margin-top: -5px;
+		width: 20px;
+  	}
+}
+
+//sizes
+.btn--small {
+	@include border-radius ( $value: 0 );
+	display: block;
+	font-size: 10px;
+	font-size: rem(10px);
+	padding: 0px 15px; // 10px 25px;
+	line-height: 30px;
+
+	@include media($sbp) {
+		display: inline-block;
+	}
+}
+
+.btn--big {
+	@include border-radius ( $value: 0 );
+	font-size: 18px;
+	font-size: rem(18px);
+	padding: 20px 50px;
+
+	&:before {
+		height: 20px;
+		margin-top: -4px;
+		right: 0;
+	}
+
+	@include media($mbp){
+		&:hover:before {
+			right: -35px;
+		}
+	}
+}
+
+//HAMBURGER, RELATED AND SEARCH
+.ham-wrap {
+	position: relative;
+    width: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hamburger {
+	@include burger(25px, 5px, 3px, $burger-color, 0, .3s);
+	margin: 0 auto;
+	&:after {
+		content: "";
+		display: block;
+		height: 2px;
+		width: 5px;
+		background-color: $burger-color;
+		position: absolute;
+		left: -5px;
+		top: 0;
+	}
+	&-after, &-before {
+		&:after {
+			content: "";
+			display: block;
+			height: 2px;
+			width: 5px;
+			background-color: $burger-color;
+			position: absolute;
+			left: -5px;
+			top: 0;
+		}
+	}
+}
+
+.hamburger-btn[aria-expanded=true] {
+	.hamburger {
+		&:after {
+			display: none;
+		}
+		&-after, &-before {
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+.hamburger-btn, .search-btn, .related-btn {
+	-webkit-appearance: none;
+	appearance: none;
+	background: none;
+	border: none;
+	height: 60px;
+	outline: none;
+	padding: 0;
+	width: 100%;
+
+	&:focus {
+		opacity: .6;
+	}
+
+	@include media($mbp){
+		&:hover {
+			opacity: .6;
+		}
+	}
+}
+
+.hamburger-btn {
+	&[aria-expanded="true"] {
+		.hamburger {
+			@include burger-to-cross();
+		}
+	}
+}
+
+.search-btn {
+  padding-bottom: 10px;
+}
+
+.hamburger-btn--mobile,
+.search-btn--mobile,
+.related-btn--mobile {
+	@include transition(background-color, .3s, ease-in-out);
+	background-color: $bg-color-light;
+	height: 50px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 50px;
+	z-index: 2000;
+
+  &[aria-expanded="true"]{
+    background-color: rgba($gray-0, 0);
+  }
+}
+
+.search-btn--mobile {
+	left: 50px;
+	z-index: 500;
+	padding-bottom: 0;
+}
+
+.related-btn--mobile {
+	left: 100px;
+	z-index: 500;
+}

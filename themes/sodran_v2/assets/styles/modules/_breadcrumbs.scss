@@ -1,0 +1,41 @@
+//===================================
+// Breadcrumbs
+//===================================
+
+.breadcrumbs {
+	padding: 30px 0;
+	position: relative;
+}
+
+.breadcrumbs__wrapper {
+	@include rotate-and-center(-90deg);
+
+	white-space: nowrap;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 50vh;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+}
+
+.breadcrumbs__link {
+	color: $gray-0;
+	display: inline-block;
+	font-size: 16px;
+	font-size: rem(16px);
+	font-weight: 700;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+a.breadcrumbs__link {
+	color: $link-color;
+	&:hover {
+		@include media($mbp) {
+			color: $link-color-h;
+		}
+	}
+}

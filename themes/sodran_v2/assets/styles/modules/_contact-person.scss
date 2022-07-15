@@ -1,0 +1,52 @@
+.contact-person {
+	width: 100%;
+	display: block;
+	clear: both;
+	max-width: 530px;
+  margin: 0 auto 60px auto;
+	
+	@include media($sbp){
+    min-height: 150px;
+    margin-bottom: 30px;
+  }
+
+}
+
+.contact-person__img {
+	border-radius: 50%;
+	height: 150px;
+	width: 150px;
+	overflow: hidden;
+	margin: 0 auto;
+
+	@include media($sbp){
+		margin: 0 30px 0 0;
+		float: left;
+  }
+}
+
+.contact-person__editor {
+	text-align: center;
+	padding-top: 20px;
+
+	@include media($sbp){
+		overflow: hidden;
+		text-align: left;
+  }
+
+	*:first-child {
+		margin-top: 0;
+	}
+
+	*:last-child {
+		margin-bottom: 0;
+	}
+
+	a[href^='mailto:'] {
+		display: block;
+		width: 100%;
+	  white-space: nowrap;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	}
+}
